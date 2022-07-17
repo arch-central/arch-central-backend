@@ -1,0 +1,28 @@
+{
+  "name": "fish",
+  "version": "1.0.0",
+  "description": "Global Local User Backend",
+  "main": "index.js",
+  "license": "GPL3.0",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json src/index.ts",
+    "dev:debug": "nodemon --config nodemon.json --inspect src/index.ts"
+  },
+  "dependencies": {
+    "@fastify/autoload": "^4.0.1",
+    "@fastify/cors": "^7.0.0",
+    "@fastify/jwt": "^5.0.1",
+    "dotenv": "^15.0.0",
+    "fastify": "^3.26.0",
+    "fastify-plugin": "^3.0.1",
+    "mariadb": "^2.5.5"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.9",
+    "nodemon": "^2.0.15",
+    "sequelize": "^6.13.0",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^4.0.0",
+    "typescript": "^4.5.4"
+  }
+}
