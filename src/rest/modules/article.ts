@@ -23,6 +23,9 @@ export default async(rest: FastifyInstance) => {
             limit: 5,
             offset: ((request.query && isFinite(request.query.page) ? request.query.page : 0) - 1) * 5 
         }).then((e) => {
+            if (e.length == 0)
+                send(reply, "Success", 200, e)
+                
             e.forEach(e => { 
                 var v = e.description.substring(0, 200); 
                 e.description = v.slice(0, v.lastIndexOf(' ')) + "...";
