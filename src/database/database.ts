@@ -1,8 +1,9 @@
 import process from 'process';
 import { Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize(process.env.DB, process.env.USER, process.env.PASSWORD, {
-    host: process.env.HOST,
+console.log(process.env.USER)
+const sequelize = new Sequelize(process.env.DB, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: 'mariadb'
 });
 
