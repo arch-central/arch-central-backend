@@ -33,7 +33,7 @@ export default async(rest: FastifyInstance) => {
                     send(reply, "Success", 200, e)
                 })
             })
-        }, () => send(reply, "Internal Error", 500))
+        }, (e) => {send(reply, "Internal Error", 500); console.log(e) } )
     })
 
     rest.get('/article/:id', async (request: articleId, reply) => {
@@ -51,7 +51,7 @@ export default async(rest: FastifyInstance) => {
                 e.setDataValue('tags', tags.map(e => e.name))
                 send(reply, "Success", 200, e)
             })
-        }, () => send(reply, "Internal Error", 500))
+        }, (e) => {send(reply, "Internal Error", 500); console.log(e) } )
     })
 
 
@@ -61,7 +61,7 @@ export default async(rest: FastifyInstance) => {
             col: 'article.id'
         }).then((e) => {
             send(reply, "Success", 200, { pageCount: Math.ceil(e / 5) })
-        }, () => send(reply, "Internal Error", 500))
+        }, (e) => {send(reply, "Internal Error", 500); console.log(e) } )
     })
 
     rest.get('/article/:id/img', async (request: articleId, reply) => {
