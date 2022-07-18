@@ -9,7 +9,7 @@ const start = async () => {
     rest.register(require('@fastify/cors'))
     rest.register(autoload, { dir: join(__dirname, 'rest/modules'), options: { prefix: 'api/1' } })
     
-    rest.listen(3001, '0.0.0.0', (err) => {
+    rest.listen(3000, '0.0.0.0', (err) => {
         if (err) throw err
         console.log("Sever Started Without Any Errors")
     })
